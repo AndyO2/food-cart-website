@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { menuItems, categories, MenuItem } from '../data/menuData';
+import { currentConfig } from '../config/foodCartConfig';
 import './Menu.css';
 
 
@@ -18,8 +19,8 @@ const Menu: React.FC = () => {
     <div className="menu">
       <div className="menu-header">
         <div className="container">
-          <h1>Breaking Buns PDX Menu</h1>
-          <p>Authentic Asian street food - Gua Bao (steamed buns) and noodles made fresh daily</p>
+          <h1>{currentConfig.name} Menu</h1>
+          <p>{currentConfig.description}</p>
         </div>
       </div>
 

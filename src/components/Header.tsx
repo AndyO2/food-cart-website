@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { currentConfig } from '../config/foodCartConfig';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -25,7 +26,7 @@ const Header: React.FC = () => {
       <div className="header-container">
         <div className="logo">
           <Link to="/" onClick={closeMenu}>
-            <h1>🥟 Breaking Buns PDX</h1>
+            <h1>{currentConfig.logo} {currentConfig.name}</h1>
           </Link>
         </div>
         
