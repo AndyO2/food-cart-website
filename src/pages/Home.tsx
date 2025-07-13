@@ -8,40 +8,40 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Delicious Food on Wheels</h1>
-          <p>Fresh, flavorful, and made with love. Our food cart brings the best local cuisine right to your neighborhood.</p>
+          <h1>Authentic Asian Street Food</h1>
+          <p>Fresh, flavorful Gua Bao (steamed buns) and noodles made with love. Breaking Buns PDX brings authentic Asian street food to Portland.</p>
           <div className="hero-buttons">
             <Link to="/menu" className="btn btn-primary">View Menu</Link>
             <Link to="/catering" className="btn btn-secondary">Catering</Link>
           </div>
         </div>
         <div className="hero-image">
-          <div className="food-cart-illustration">🍔</div>
+          <div className="food-cart-illustration">🥟</div>
         </div>
       </section>
 
       {/* Featured Items */}
       <section className="featured">
         <div className="container">
-          <h2>Today's Specials</h2>
+          <h2>Popular Items</h2>
           <div className="featured-grid">
             <div className="featured-item">
-              <div className="item-image">🍕</div>
-              <h3>Margherita Pizza</h3>
-              <p>Fresh mozzarella, basil, and our signature tomato sauce</p>
-              <span className="price">$12.99</span>
-            </div>
-            <div className="featured-item">
-              <div className="item-image">🌮</div>
-              <h3>Street Tacos</h3>
-              <p>Authentic Mexican flavors with fresh cilantro and lime</p>
-              <span className="price">$8.99</span>
+              <div className="item-image">🥟</div>
+              <h3>Ota Tofu Bao</h3>
+              <p>Ota Tofu coated in rice flour and house made togarashi and fried crisp</p>
+              <span className="price">$8.00</span>
             </div>
             <div className="featured-item">
               <div className="item-image">🥪</div>
-              <h3>Gourmet Sandwich</h3>
-              <p>Premium meats, fresh vegetables, and artisan bread</p>
-              <span className="price">$10.99</span>
+              <h3>Chicken Philly Cheesesteak Bao</h3>
+              <p>Chicken thighs, sauteed Bell Peppers, Mushrooms and Onions topped with Cheddar cheese</p>
+              <span className="price">$8.50</span>
+            </div>
+            <div className="featured-item">
+              <div className="item-image">🥓</div>
+              <h3>Pork Belly Bao</h3>
+              <p>Oven Roasted Pork Belly sauteed with Mushrooms and Napa Cabbage, glazed with Sweet Soy sauce</p>
+              <span className="price">$9.50</span>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
       {/* Why Choose Us */}
       <section className="why-us">
         <div className="container">
-          <h2>Why Choose Our Food Cart?</h2>
+          <h2>Why Choose Breaking Buns PDX?</h2>
           <div className="features-grid">
             <div className="feature">
               <div className="feature-icon">🌱</div>
@@ -58,9 +58,9 @@ const Home: React.FC = () => {
               <p>We source only the freshest local ingredients for every dish.</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">⚡</div>
-              <h3>Quick Service</h3>
-              <p>Fast, friendly service so you can enjoy your meal without the wait.</p>
+              <div className="feature-icon">🥟</div>
+              <h3>Authentic Asian</h3>
+              <p>Authentic Gua Bao (steamed buns) and traditional Asian street food.</p>
             </div>
             <div className="feature">
               <div className="feature-icon">💝</div>
@@ -69,8 +69,8 @@ const Home: React.FC = () => {
             </div>
             <div className="feature">
               <div className="feature-icon">🌍</div>
-              <h3>Local Favorite</h3>
-              <p>Part of the community for years, serving our neighbors daily.</p>
+              <h3>Portland Local</h3>
+              <p>Part of the Portland community, serving authentic Asian cuisine daily.</p>
             </div>
           </div>
         </div>
@@ -79,8 +79,8 @@ const Home: React.FC = () => {
       {/* Call to Action */}
       <section className="cta">
         <div className="container">
-          <h2>Ready to Taste the Difference?</h2>
-          <p>Visit us today and experience the best food cart in town!</p>
+          <h2>Ready to Taste Authentic Asian Street Food?</h2>
+          <p>Visit us today and experience the best Gua Bao in Portland!</p>
           <div className="cta-buttons">
             <Link to="/menu" className="btn btn-primary">Order Now</Link>
             <Link to="/hours" className="btn btn-outline">Check Hours</Link>

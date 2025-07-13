@@ -1,56 +1,14 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/CartContext';
+import { menuItems, categories, MenuItem } from '../data/menuData';
 import './Menu.css';
 
-interface MenuItem {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  emoji: string;
-  popular?: boolean;
-}
+
 
 const Menu: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-
-  const menuItems: MenuItem[] = [
-    // Appetizers
-    { id: 1, name: "Loaded Nachos", description: "Crispy tortilla chips topped with melted cheese, jalapeños, and fresh salsa", price: 8.99, category: "appetizers", emoji: "🧀" },
-    { id: 2, name: "Bruschetta", description: "Toasted bread with fresh tomatoes, basil, and garlic", price: 6.99, category: "appetizers", emoji: "🍅" },
-    { id: 3, name: "Mozzarella Sticks", description: "Crispy breaded mozzarella served with marinara sauce", price: 7.99, category: "appetizers", emoji: "🧀" },
-    
-    // Main Dishes
-    { id: 4, name: "Margherita Pizza", description: "Fresh mozzarella, basil, and our signature tomato sauce", price: 12.99, category: "main", emoji: "🍕", popular: true },
-    { id: 5, name: "Street Tacos", description: "Authentic Mexican flavors with fresh cilantro and lime", price: 8.99, category: "main", emoji: "🌮", popular: true },
-    { id: 6, name: "Gourmet Burger", description: "Premium beef patty with lettuce, tomato, and special sauce", price: 11.99, category: "main", emoji: "🍔" },
-    { id: 7, name: "Chicken Caesar Wrap", description: "Grilled chicken, romaine lettuce, parmesan, and caesar dressing", price: 9.99, category: "main", emoji: "🥪" },
-    { id: 8, name: "Pasta Carbonara", description: "Creamy pasta with bacon, eggs, and parmesan cheese", price: 13.99, category: "main", emoji: "🍝" },
-    
-    // Sides
-    { id: 9, name: "French Fries", description: "Crispy golden fries seasoned with sea salt", price: 4.99, category: "sides", emoji: "🍟" },
-    { id: 10, name: "Onion Rings", description: "Beer-battered onion rings with dipping sauce", price: 5.99, category: "sides", emoji: "🧅" },
-    { id: 11, name: "Side Salad", description: "Fresh mixed greens with cherry tomatoes and vinaigrette", price: 4.99, category: "sides", emoji: "🥗" },
-    
-    // Desserts
-    { id: 12, name: "Chocolate Brownie", description: "Warm chocolate brownie with vanilla ice cream", price: 6.99, category: "desserts", emoji: "🍫" },
-    { id: 13, name: "Tiramisu", description: "Classic Italian dessert with coffee and mascarpone", price: 7.99, category: "desserts", emoji: "☕" },
-    { id: 14, name: "Cheesecake", description: "New York style cheesecake with berry compote", price: 6.99, category: "desserts", emoji: "🍰" },
-    
-    // Drinks
-    { id: 15, name: "Fresh Lemonade", description: "Homemade lemonade with real lemons", price: 3.99, category: "drinks", emoji: "🍋" },
-    { id: 16, name: "Iced Coffee", description: "Cold brew coffee with cream and sugar", price: 4.99, category: "drinks", emoji: "☕" },
-    { id: 17, name: "Smoothie", description: "Fresh fruit smoothie with yogurt", price: 5.99, category: "drinks", emoji: "🥤" },
-  ];
-
-  const categories = [
-    { id: 'all', name: 'All Items' },
-    { id: 'appetizers', name: 'Appetizers' },
-    { id: 'main', name: 'Main Dishes' },
-    { id: 'sides', name: 'Sides' },
-    { id: 'desserts', name: 'Desserts' },
-    { id: 'drinks', name: 'Drinks' },
-  ];
+  const [selectedQuantities, setSelectedQuantities] = useState<{ [key: number]: number }>({});
+  const { addItem } = useCart();
 
   const filteredItems = activeCategory === 'all' 
     ? menuItems 
@@ -60,8 +18,8 @@ const Menu: React.FC = () => {
     <div className="menu">
       <div className="menu-header">
         <div className="container">
-          <h1>Our Menu</h1>
-          <p>Delicious food made fresh daily with the finest ingredients</p>
+          <h1>Breaking Buns PDX Menu</h1>
+          <p>Authentic Asian street food - Gua Bao (steamed buns) and noodles made fresh daily</p>
         </div>
       </div>
 
@@ -88,7 +46,53 @@ const Menu: React.FC = () => {
               <div className="item-content">
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <span className="item-price">${item.price.toFixed(2)}</span>
+                
+                {/* Quantity selection for bao items */}
+                {item.category === 'bao' && item.options && (
+                  <div className="quantity-selector">
+                    <label>Quantity:</label>
+                    <select
+                      value={selectedQuantities[item.id] || 2}
+                      onChange={(e) => setSelectedQuantities({
+                        ...selectedQuantities,
+                        [item.id]: parseInt(e.target.value)
+                      })}
+                    >
+                      {item.options.map(option => (
+                        <option key={option.quantity} value={option.quantity}>
+                          {option.quantity} for ${option.price.toFixed(2)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+                
+                <div className="item-footer">
+                  <span className="item-price">
+                    ${item.category === 'bao' && item.options 
+                      ? item.options.find(opt => opt.quantity === (selectedQuantities[item.id] || 2))?.price.toFixed(2) || item.price.toFixed(2)
+                      : item.price.toFixed(2)
+                    }
+                  </span>
+                  <button 
+                    className="add-to-cart-btn"
+                    onClick={() => {
+                      const quantity = item.category === 'bao' ? (selectedQuantities[item.id] || 2) : 1;
+                      const price = item.category === 'bao' && item.options 
+                        ? item.options.find(opt => opt.quantity === quantity)?.price || item.price
+                        : item.price;
+                      
+                      addItem({
+                        id: item.id,
+                        name: `${item.name}${quantity > 1 ? ` (${quantity} bao)` : ''}`,
+                        price: price,
+                        emoji: item.emoji
+                      });
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -96,8 +100,8 @@ const Menu: React.FC = () => {
 
         {/* Special Notice */}
         <div className="menu-notice">
-          <h3>📞 Call Ahead for Large Orders</h3>
-          <p>For orders of 10+ items, please call us at (555) 123-4567 to ensure we can prepare your order efficiently.</p>
+          <h3>🥟 Gua Bao Specials</h3>
+          <p>All Gua Bao items come in quantities of 2, 3, or 4. Choose your preferred quantity when ordering!</p>
         </div>
       </div>
     </div>

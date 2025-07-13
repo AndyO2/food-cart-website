@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import './Header.css';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { toggleCart, getTotalItems } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,7 +25,7 @@ const Header: React.FC = () => {
       <div className="header-container">
         <div className="logo">
           <Link to="/" onClick={closeMenu}>
-            <h1>🍔 Food Cart</h1>
+            <h1>🥟 Breaking Buns PDX</h1>
           </Link>
         </div>
         
@@ -77,11 +79,19 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
-        <button className="hamburger" onClick={toggleMenu}>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
+        <div className="header-actions">
+          <button className="cart-btn" onClick={toggleCart}>
+            🛒
+            {getTotalItems() > 0 && (
+              <span className="cart-badge">{getTotalItems()}</span>
+            )}
+          </button>
+          <button className="hamburger" onClick={toggleMenu}>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+        </div>
       </div>
     </header>
   );
