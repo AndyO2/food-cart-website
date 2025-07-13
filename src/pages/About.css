@@ -1,0 +1,348 @@
+.about {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.about-header {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Story Section */
+.story-section {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.story-content h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.story-content p {
+  color: #7f8c8d;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.story-image {
+  text-align: center;
+}
+
+.image-placeholder {
+  font-size: 8rem;
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Values Section */
+.values-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.values-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.value-item {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.value-item h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.value-item p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+  padding: 4rem 0;
+}
+
+.team-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.team-member {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.member-avatar {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.member-title {
+  color: #ff6b6b;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.team-member p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Awards Section */
+.awards-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.awards-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.award-item {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.award-item:hover {
+  transform: translateY(-5px);
+}
+
+.award-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.award-item h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.award-item p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Community Section */
+.community-section {
+  padding: 4rem 0;
+}
+
+.community-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.community-content {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.community-content p {
+  color: #7f8c8d;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.community-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.community-content li {
+  color: #7f8c8d;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 4rem 0;
+  background: white;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-cta p {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.btn-secondary:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .story-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .story-content h2,
+  .values-section h2,
+  .team-section h2,
+  .awards-section h2,
+  .community-section h2,
+  .contact-cta h2 {
+    font-size: 2rem;
+  }
+
+  .values-grid,
+  .team-grid,
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-placeholder {
+    font-size: 6rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+} 

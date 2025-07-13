@@ -1,0 +1,262 @@
+.home {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: white;
+  color: #ff6b6b;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #ff6b6b;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.btn-outline:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.food-cart-illustration {
+  font-size: 8rem;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Featured Section */
+.featured {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.featured h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featured-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.featured-item:hover {
+  transform: translateY(-10px);
+}
+
+.item-image {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.featured-item h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.featured-item p {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+/* Why Us Section */
+.why-us {
+  padding: 5rem 0;
+  background: white;
+}
+
+.why-us h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  text-align: center;
+  padding: 2rem;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.feature p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .food-cart-illustration {
+    font-size: 6rem;
+  }
+
+  .featured-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .featured h2,
+  .why-us h2,
+  .cta h2 {
+    font-size: 2rem;
+  }
+} 
