@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
-import { menuItems, categories, MenuItem } from '../data/menuData';
+import { menuItems, categories } from '../data/menuData';
 import { currentConfig } from '../config/foodCartConfig';
 import './Menu.css';
 

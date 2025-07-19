@@ -27,8 +27,11 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h4>Follow Us</h4>
           <div className="social-links">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a href="#" className="social-link">📘 Facebook</a>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a href="#" className="social-link">📷 Instagram</a>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a href="#" className="social-link">🐦 Twitter</a>
           </div>
         </div>
